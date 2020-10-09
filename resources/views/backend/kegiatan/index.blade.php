@@ -27,14 +27,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>maling111</td>
-                                <td>malingburung</td>
+                                <td>Wattpad</td>
+                                <td>Pancarona</td>
                                 <td>29/04/20</td>
-                                <td>transformasi</td>
-                                <td>Be Your Self And Never Surrender</td>
+                                <td>-</td>
+                                <td>Library 20jul</td>
                                 <td>
-                                    <a href="" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a href="" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                    <a href="{{route('activity.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                                    <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
                                 </td>
                             </tr>
                         </tbody>

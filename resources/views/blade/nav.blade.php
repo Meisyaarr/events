@@ -20,7 +20,7 @@
                             <a href="{{route('registers')}}" class="nav-link">Master Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user')}}" class="nav-link">User</a>
+                            <a href="" class="nav-link">User</a>
                         </li>
                     </ul>
 

@@ -18,15 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'activitys'], function(){
-    Route::get('index', 'ActivityController@index')->name('activitys');
-    Route::get('create','ActivityController@create')->name('activitys.create');
-});
-Route::group(['prefix' => 'registers'], function(){
-    Route::get('index', 'Register\RegistersController@index')->name('registers');
-    Route::get('ambil-formulir', 'Register\RegistersController@create')->name('registers.ambil-formulir');
+
+Route::group(['prefix' => 'activity'], function(){
+    Route::get('index', 'ActivityController@index')->name('activity');
+
+    Route::get('create','ActivityController@create')->name('activity.create');
+
+    Route::get('tampil-formEdit','ActivityController@edit')->name('activity.tampil-formEdit');
+
 });
 
-Route::group(['prefix' => 'users'], function(){
-    Route::get('index', 'User\UserController@index')->name('users');
+Route::group(['prefix' => 'registers'], function(){
+    Route::get('index', 'Register\RegistersController@index')->name('registers');
+
+    Route::get('ambil-formulir', 'Register\RegistersController@create')->name('registers.ambil-formulir');
+
+    Route::get('tampil-formShow','Register\RegistersController@show')->name('registers.tampil-formShow');
+
 });
