@@ -14,14 +14,14 @@ class CreateActivitysTable extends Migration
     public function up()
     {
         Schema::create('activitys', function (Blueprint $table) {
-            $table->increments('id');$table->string('nisn');
+            $table->increments('id');
             $table->string('code_activity')->unique();
             $table->string('name');
             $table->string('date');
             $table->string('information');
             $table->string('status');
             $table->string('price');
-            $table->string('file');
+            $table->string('images');
             $table->string('capacity');
             $table->timestamps();
         });

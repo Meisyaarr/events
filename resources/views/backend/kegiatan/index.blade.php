@@ -26,17 +26,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse($activity as $activity)
                             <tr>
-                                <td>Wattpad</td>
-                                <td>Pancarona</td>
-                                <td>29/04/20</td>
-                                <td>-</td>
-                                <td>Library 20jul</td>
+                                <td><a href="{{route('activity.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">{{$activity->code_activity}}</a></td>
+                                <td>{{$activity->date}}</td>
+                                <td>{{$activity->status}}</td>
                                 <td>
-                                    <a href="{{route('activity.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                                    <img src="{{asset('storage/'.$activity->image)}}" alt="" class="rounded" weight="25" height="25">
+                                </td>
+                                <td>{{$activity->capacity}}</td>
+                                <td>
+                                    
                                     <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

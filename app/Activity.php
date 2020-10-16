@@ -27,8 +27,8 @@ class Activity extends Model
             $kode = "$_kode".str_pad($last, 3, '0', STR_PAD_LEFT);
         }
         
-        // return $kode
-        dd($kode);
+        return $kode;
+        // dd($kode);
     }
 
 }

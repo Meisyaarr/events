@@ -24,6 +24,8 @@ Route::group(['prefix' => 'activity'], function(){
 
     Route::get('create','ActivityController@create')->name('activity.create');
 
+    Route::post('save','ActivityController@store')->name('kegiatan.save');
+
     Route::get('tampil-formEdit','ActivityController@edit')->name('activity.tampil-formEdit');
 
 });
