@@ -26,7 +26,11 @@ Route::group(['prefix' => 'activity'], function(){
 
     Route::post('save','ActivityController@store')->name('kegiatan.save');
 
-    Route::get('tampil-formEdit','ActivityController@edit')->name('activity.tampil-formEdit');
+    Route::get('tampil-formEdit/{activity}','ActivityController@edit')->name('activity.tampil-formEdit');
+
+    Route::patch('update/{activity}','ActivityController@update')->name('activity.update');
+
+    Route::get('hapus/{activity}','ActivityController@destroy')->name('activity.hapus');
 
 });
 

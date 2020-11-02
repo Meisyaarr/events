@@ -18,9 +18,8 @@
                         <thead>
                             <tr>
                                 <th>Kode kegiatan</th>
-                                <th>Nama Kegiatan</th>
+                                
                                 <th>Tanggal</th>
-                                <th>Informasi</th>
                                 <th>Status</th>
                                 <th>Option</th>
                             </tr>
@@ -28,7 +27,7 @@
                         <tbody>
                             @forelse($activity as $activity)
                             <tr>
-                                <td><a href="{{route('activity.tampil-formEdit')}}" class="btn btn-outline-primary btn-sm">{{$activity->code_activity}}</a></td>
+                                <td><a href="{{route('activity.tampil-formEdit',$activity->id)}}" class="btn btn-outline-primary btn-sm">{{$activity->code_activity}}</a></td>
                                 <td>{{$activity->date}}</td>
                                 <td>{{$activity->status}}</td>
                                 <td>
@@ -36,8 +35,11 @@
                                 </td>
                                 <td>{{$activity->capacity}}</td>
                                 <td>
-                                    
-                                    <a href="http://" class="btn btn-outline-danger btn-sm">Hapus</a>
+                                <form action="{{route('activity.hapus',$activity->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-danger btn-sm">Hapus</button>
+                                </form>
                                 </td>
                             </tr>
                             @endforeach

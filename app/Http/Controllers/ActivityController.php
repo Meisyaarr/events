@@ -29,9 +29,10 @@ class ActivityController extends Controller
         return view('backend.kegiatan.create',compact('getkode'));
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('backend.kegiatan.edit');
+        $activity = Activity::findOrFail($id);
+        return view('backend.kegiatan.edit',compact('activity'));
     }
 
     public function store()
@@ -41,6 +42,25 @@ class ActivityController extends Controller
 
         return redirect()->back()->with(['success' => 'Activity berhasil dibuat']);
 
+    }
+
+    public function update(activity $activity)
+    {
+        $activity->update($this->validateRequest());
+        $this->storeImage($activity);
+
+        return redirect()->back()->with(['success' => 'Activity berhasil dibuat']);
+
+    }
+
+    public function destroy(activity $activity)
+    {
+        $activity->delete();
+        if(\File::exist(public_path('storage/', $activity->images)));
+        {
+            \File::delete(public_path('storage/', $activity->images));
+        }
+        return redirect()->back()->with(['success' => 'Activity berhasil dihapus']);
     }
 
     private function validateRequest()
