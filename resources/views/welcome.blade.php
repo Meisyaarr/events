@@ -26,13 +26,13 @@
         <div class="nav-scroller bg-white shadow-sm">
             <nav class="nav nav-underline ml-4 py-2">
                 <a href="" class="nav-link">
-                    <h6 classs="text-muted">Home</h6>
+                    <h6 class="text-muted">Home</h6>
+                </a>
+                <a href="{{route('users.Kegiatan.index')}}" class="nav-link">
+                    <h6 class="text-muted">Kegiatan</h6>
                 </a>
                 <a href="" class="nav-link">
-                    <h6 classs="text-muted">Kegiatan</h6>
-                </a>
-                <a href="" class="nav-link">
-                    <h6 classs="text-muted">Daftar</h6>
+                    <h6 class="text-muted">Daftar</h6>
                 </a>
             </nav>
         </div>
